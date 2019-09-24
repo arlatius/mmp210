@@ -4,6 +4,9 @@ function setup() {
 
 function draw() {
   background('lightblue');
+  
+
+  
   fill('#FFF1AB');
   stroke('black');
   ellipse(300, 200, 300, 350) //face
