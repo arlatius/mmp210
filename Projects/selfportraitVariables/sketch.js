@@ -1,6 +1,9 @@
 var x = 300;
 var y = 200;
 var faceSize = 500;
+var eyeWidth = 100;
+var eyeHeight= 55;
+var pupil= 25;
 
 function setup() {
   createCanvas(600, 400);
@@ -25,13 +28,14 @@ function draw() {
   //eyes
   fill('white');
   stroke('black');
-  ellipse(y+20, y, faceSize/5, y-145) //left eye
-  ellipse(x+80, y, faceSize/5, y-145) //right eye
+  ellipse(y+20, y, eyeWidth, eyeHeight) //left eye
+  ellipse(x+80, y, eyeWidth, eyeHeight) //right eye
   fill('#4C1B00');
   circle(y+20, y, faceSize/10); //left iris
   circle(x+80, y, faceSize/10); //right iris
   fill('black');
-  circle(y+20, y, faceSize/20); //right pupil
+  circle(y+20, y, pupil); //let pupil
+  circle(x+80, y, pupil); //right pupil
   fill('white');
   noStroke();
   circle(y+40, y-10, y-185); //left shine
