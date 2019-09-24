@@ -10,11 +10,11 @@ function draw() {
   background('lightblue');
   fill('#FFF1AB');
   stroke('black');
-  ellipse(x, y, 300, 350) //face
+  ellipse(x, y, x, x+50) //face
   fill('#FFAE94');
   noStroke();
-  circle(x - 110, y + 20, 70); //left cheek
-  circle(x +110, y+20, 70); //right cheek
+  circle(x - 110, y + 20, y-130); //left cheek
+  circle(x +110, y+20, y-130); //right cheek
 
   //nose
   fill('#F1D18B');
@@ -25,18 +25,17 @@ function draw() {
   //eyes
   fill('white');
   stroke('black');
-  ellipse(y+20, y, 100, 55) //left eye
-  ellipse(x+80, y, 100, 55) //right eye
+  ellipse(y+20, y, faceSize/5, y-145) //left eye
+  ellipse(x+80, y, faceSize/5, y-145) //right eye
   fill('#4C1B00');
-  circle(y+20, y, 50); //left iris
-  circle(x+80, y, 50); //right iris
+  circle(y+20, y, faceSize/10); //left iris
+  circle(x+80, y, faceSize/10); //right iris
   fill('black');
-  circle(y+20, y, 25); //let pupil
-  circle(x+80, y, 25); //right pupil
+  circle(y+20, y, faceSize/20); //right pupil
   fill('white');
   noStroke();
-  circle(y+40, y-10, 15); //left shine
-  circle(x+100, y-10, 15); //right shine
+  circle(y+40, y-10, y-185); //left shine
+  circle(x+100, y-10, y-185); //right shine
 
   fill('#4C0000');
   stroke('black');
@@ -44,10 +43,10 @@ function draw() {
 
   //hair
   fill('black');
-  ellipse(300, 100, 150, 200);
-  ellipse(400, 125, 150, 150);
-  ellipse(380, 85, 150, 100);
-  ellipse(190, 120, 100, 150);
-  ellipse(220, 80, 100, 100);
+  ellipse(x, y-100, y-50, y);
+  ellipse(x+100, y-75, y-50, y-50);
+  ellipse(x+80, y-115, y-50, y-100);
+  ellipse(y-10, y-80, y-100, y-50);
+  ellipse(y+20, y-120, y-100, y-100);
 
 }
