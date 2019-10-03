@@ -1,3 +1,6 @@
+//EYE COLOR CHANGE
+
+
 function setup() {
   createCanvas(600, 400);
 }
@@ -28,7 +31,7 @@ function draw() {
   stroke('black');
   ellipse(220, 200, 100, 55) //left eye
   ellipse(380, 200, 100, 55) //right eye
-  fill('red');
+  fill(r, g, b);
   circle(220, 200, 50); //left iris
   circle(380, 200, 50); //right iris
   fill('black');
