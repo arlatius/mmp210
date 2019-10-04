@@ -30,6 +30,9 @@ function setup() {
 
 function draw() {
     
+    var r = mouseX + mouseY; //red
+    var g = map(mouseX,0,width,0,255); //green
+    var b= map(mouseY,0,height,0,255); //blue
   //other
     
   
@@ -57,7 +60,7 @@ function draw() {
   stroke('black');
   ellipse(lex, 200, 100, 55) //left eye
   ellipse(rex, 200, 100, 55) //right eye
-  fill('#4C1B00');
+  fill(r,g,b);
   circle(lex, 200, 50); //left iris
   circle(rex, 200, 50); //right iris
   fill('black');
@@ -83,5 +86,6 @@ function draw() {
 }
 function mousePressed() {
     background(0, 50);
+
 }
 
