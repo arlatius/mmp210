@@ -160,9 +160,13 @@ var x = 320;
 var y = 180;
 
 var meme;
+var meme2;
+var meme3;
 
 function preload() {
     meme = loadImage("images/sillyswampghost.jpg")
+    meme2 = loadImage("images/sillyswampghost2.jpg")
+    meme3 = loadImage("images/meme.jpg")
 
 }
 
@@ -196,7 +200,7 @@ function draw() {
     var col = width / 2;
     var s = width / 4;
 
-    
+
     //hover stuff
 
     //top left
@@ -205,11 +209,11 @@ function draw() {
         fill(255, 0, 0, 75);
         rect(0, 0, col, row);
 
-stroke('black');
-    strokeWeight(5);
+        stroke('black');
+        strokeWeight(5);
         textSize(20);
         fill('white');
-        text("top left", s - s - s, s - s - s, 480, 480);
+        text("default", s - s - s, s - s - s, 480, 480);
 
     }
     //top right
@@ -219,10 +223,10 @@ stroke('black');
         rect(col, 0, col, row);
 
         stroke('black');
-    strokeWeight(5);
+        strokeWeight(5);
         textSize(20);
         fill('white');
-        text("top right", s, s - s - s, 480, 480);
+        text("change text", s, s - s - s, 480, 480);
 
 
     }
@@ -233,10 +237,10 @@ stroke('black');
         rect(0, row, col, row);
 
         stroke('black');
-    strokeWeight(5);
+        strokeWeight(5);
         textSize(20);
         fill('white');
-        text("bottom left", s - s - s, s, 480, 480);
+        text("change image and text", s - s - s, s, 480, 480);
 
 
     }
@@ -247,30 +251,60 @@ stroke('black');
         rect(col, row, col, row);
 
         stroke('black');
-    strokeWeight(5);
+        strokeWeight(5);
         textSize(20);
         fill('white');
-        text("bottom right", s, s, 480, 480);
+        text("im out of ideas lol", s, s, 480, 480);
 
 
     }
 
-noStroke();
+    noStroke();
     /*click quadrants for different stuff i guess??*/
     if (mouseIsPressed && mouseY < row && mouseX < col) {
-        fill(255, 0, 0, 100);
-        rect(0, 0, col, row);
+        image(meme, 0, 0, width, height)
+
+        textAlign(CENTER, CENTER);
+        textSize(30);
+        fill('white');
+        stroke('black');
+        strokeWeight(5);
+        textStyle(BOLD);
+        textFont("Mansalva");
+        text("what my cat sees when i come into the kitchen at 2 am to eat shredded cheese straight out of the bag", 0, 150, 480, 480);
     } else if (mouseIsPressed && mouseY < row && mouseX > col) {
-        fill(70, 130, 180, 100);
-        rect(col, 0, col, row);
+        image(meme, 0, 0, width, height)
+
+        textAlign(CENTER, CENTER);
+        textSize(30);
+        fill('white');
+        stroke('black');
+        strokeWeight(5);
+        textStyle(BOLD);
+        textFont("Mansalva");
+        text("what you see when youre in bed and someone opens your door", 0, 150, 480, 480);
     } else if (mouseIsPressed && mouseY > row && mouseX < col) {
-        fill(46, 139, 87, 100);
-        rect(0, row, col, row);
+        image(meme2, 0, 0, width, height)
 
+        textAlign(CENTER, CENTER);
+        textSize(30);
+        fill('white');
+        stroke('black');
+        strokeWeight(5);
+        textStyle(BOLD);
+        textFont("Mansalva");
+        text("what your cat sees when you drop something under your bed and reach down to grab it", 0, 150, 480, 480);
     } else if (mouseIsPressed && mouseY > row && mouseX > col) {
-        fill(255, 215, 0, 100);
-        rect(col, row, col, row);
+                image(meme3, 0, 0, width, height)
 
+        textAlign(CENTER, CENTER);
+        textSize(30);
+        fill('white');
+        stroke('black');
+        strokeWeight(5);
+        textStyle(BOLD);
+        textFont("Mansalva");
+        text("im out of ideas lol", 0, 150, 480, 480);
     }
 
 
