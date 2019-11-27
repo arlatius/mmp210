@@ -80,7 +80,7 @@ function draw() {
     text("Theme", 600, 150);
     text("day/night cycle", 200, 450);
   }
-  
+
   else if (slideNumber == 3){
     image(day, 0, 0, width/2, height/2);
     image(night, width/2, height/2,width/2, height/2, );
@@ -94,15 +94,15 @@ function draw() {
     // DAY
 
     background(158, 226, 255); //SKY
-    
+
     fill('yellow');
     ellipse(100,100,100); //SUN
-    
+
     fill('green');
     ellipse(400,600,1000,300); //CLOUD
-    
+
     //CLOUD 1
-    fill('white'); 
+    fill('white');
     ellipse(200,200,100,50);
     ellipse(250,220,100,50);
     ellipse(260,180,150,50);
@@ -110,7 +110,7 @@ function draw() {
     ellipse(280,250,100,50);
     ellipse(260,220,300,20);
     ellipse(450, 215,20,5);
-    
+
     //CLOUD 2
     ellipse(600,300,100,50);
     ellipse(650,320,100,50);
@@ -122,9 +122,9 @@ function draw() {
   }
   else if (slideNumber == 5){
     //NIGHT
-    
+
     background(0, 19, 59); //sky
-    
+
     //STARS
     fill(255);
     ellipse(699,300,3);
@@ -148,18 +148,18 @@ function draw() {
     ellipse(356,259,5);
     ellipse(329,385,5);
     ellipse(532,147,5);
-    
+
     fill('white');
     ellipse(100,100,100); //Moon
     fill(0, 19, 59);
     ellipse(120,100,90);
-    
-    
+
+
     fill(0, 59, 29);
     ellipse(400,600,1000,300); //GROUND
-    
+
     //CLOUD 1
-    fill(133); 
+    fill(133);
     ellipse(200,200,100,50);
     ellipse(250,220,100,50);
     ellipse(260,180,150,50);
@@ -167,7 +167,7 @@ function draw() {
     ellipse(280,250,100,50);
     ellipse(260,220,300,20);
     ellipse(450, 215,20,5);
-    
+
     //CLOUD 2
     ellipse(600,300,100,50);
     ellipse(650,320,100,50);
@@ -176,9 +176,9 @@ function draw() {
     ellipse(680,350,100,50);
     ellipse(660,320,300,20);
     ellipse(850, 315,20,5);
-    
-    
-    
+
+
+
   }
 
 
