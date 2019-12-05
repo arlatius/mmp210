@@ -3,8 +3,8 @@ RUBRIC
 
 ✓   variables- uses variables 
 ✓   interactivity- sketch changes with user input
-condiitional logic- uses at least one conditional logic statement
-external media- uses either image or sound
+✓	condiitional logic- uses at least one conditional logic statement
+✓	external media- uses either image or sound
 ✓   physical sensor- uses physical sensor
 custom function- uses at least one custom function
 instructions- instructions for the user is added to the html
@@ -19,6 +19,7 @@ var portName = "COM14"
 var sensorValue;
 
 var crickets;
+var birds;
 
 function preload() {
 	crickets = loadSound('crickets.wav');
@@ -66,7 +67,8 @@ function serialEvent() {
 
 function draw() {
 
-	var c = map(sensorValue, 0, 1023, 0, 150);
+	var c = map(sensorValue, 0, 1023, 0, 150); //sky
+	var b = map (sensorValue,0,1023,0,100)
 
 
 
@@ -75,6 +77,7 @@ function draw() {
 
 	//stars
 	var t = map(sensorValue, 0, 1023, 355, 0)
+	noStroke();
 	fill(255, 255, 255, t - 100);
 	ellipse(699, 300, 3);
 	ellipse(408, 13, 3);
@@ -100,25 +103,25 @@ function draw() {
 
 
 	// sun
-	var y = map(sensorValue, 0, 1023, height, 100);
+	var s = map(sensorValue, 0, 1023, height, 100);
 	fill('gold');
 	noStroke();
-	ellipse(100, y, 100);
+	ellipse(100, s, 100);
 
 	// moon
-	var y = map(sensorValue, 0, 1023, 100, height);
+	var m = map(sensorValue, 0, 1023, 100, height);
 	fill('white');
 	noStroke();
-	ellipse(700, y, 100);
+	ellipse(700, m, 100);
 	fill(c, c, c + 85);
-	ellipse(720, y, 90);
+	ellipse(720, m, 90);
 
 	// ground
-	fill(c, c + 75, c);
+	fill(b, b + 75, b);
 	ellipse(400, 600, 1000, 300);
 
 	//HOUSE
-	var h = map(sensorValue, 0, 1023, 0, 200);
+	var h = map(sensorValue, 0, 1023, 0, 175);
 	fill(h);
 	square(200, 320, 250);
 	
@@ -130,29 +133,63 @@ function draw() {
 
 	
 
-	/*var y = map(sensorValue, 0, 1023, 25, 225);*/
-	fill('light blue');
+	var y = map(sensorValue, 0, 1023, 25, 150);
+	fill(y);
 	//left window
 	square(225,400,37);
 	square(270,400,37);
 	square(225,445,37);
 	square(270,445,37);
-	fill('white');
+	fill(y);
 	//right window
 	square(350,400,37);
 	square(395,400,37);
 	square(350,445,37);
 	square(395,445,37);
 
+
+
+
+	if (mouseIsPressed && mouseX > 225 && mouseX < 432 && mouseY > 400 && mouseY < 482 ) {
+	fill('yellow');
+		//left window
+	square(225,400,37);
+	square(270,400,37);
+	square(225,445,37);
+	square(270,445,37);
+		//right window
+	square(350,400,37);
+	square(395,400,37);
+	square(350,445,37);
+	square(395,445,37);
+	}
+	
+	
+
+
+if (mouseIsPressed && mouseX > 0 && mouseX < 75 && mouseY > 550 && mouseY < 600) {
+        noStroke();
+        fill(255, 0, 0, 75);
+        rect(10, 550, 65, 37);
+	
+	}
+		stroke('black');
+        strokeWeight(5);
+        textSize(20);
+        fill('white');
+        text("mute", 20, 560, 400, 100);
+
 }
-
-
-
 function mousePressed() {
-	if (mouseX > 400 && mouseX < width &&
-		mouseY > 0 && mouseY < height) {
+	if (mouseX > 600 && mouseX < width &&
+		mouseY > 0 && mouseY < 400) {
+		birds.stop();
 		crickets.play();
-	} else if (mouseX > 0 && mouseX < 400 && mouseY > 0 && mouseY < height) {
+	} else if (mouseX > 0 && mouseX < 200 && mouseY > 0 && mouseY < 400) {
+		crickets.stop();
 		birds.play();
+	}else if (mouseX > 0 && mouseX < 75 && mouseY > 550 && mouseY < 600){
+		birds.stop();
+		crickets.stop();
 	}
 }
